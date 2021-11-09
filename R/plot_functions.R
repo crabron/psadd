@@ -209,12 +209,6 @@ plot_sparsity<-function(physeq, title = NULL){
 #' plot_krona(GlobalPatterns,"GP-krona", "SampleType",trim=T)
 #' }
 plot_krona<-function(physeq,output,variable, trim=F){
-  # Check if KronaTools are installed.
-  if( system(command = "which /home/gladkov/.conda/envs/pandas/bin/ktImportText",
-              intern = FALSE,
-              ignore.stdout = TRUE)) {
-  stop("KronaTools are not installed. Please see https://github.com/marbl/Krona/wiki/KronaTools.")
-  }
   if( is.null(tax_table(physeq)) ){
     stop("No taxonomy table available.")
   }
