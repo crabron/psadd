@@ -210,7 +210,7 @@ plot_sparsity<-function(physeq, title = NULL){
 #' }
 plot_krona<-function(physeq,output,variable, trim=F){
   # Check if KronaTools are installed.
-  if( system(command = "which ktImportText",
+  if( system(command = "which /home/gladkov/.conda/envs/pandas/bin/ktImportText",
               intern = FALSE,
               ignore.stdout = TRUE)) {
   stop("KronaTools are not installed. Please see https://github.com/marbl/Krona/wiki/KronaTools.")
@@ -259,7 +259,7 @@ plot_krona<-function(physeq,output,variable, trim=F){
   # Add html suffix to output
   output<-paste(output,".html",sep = "")
   # Execute Krona command
-  system(paste("ktImportText",
+  system(paste("/home/gladkov/.conda/envs/pandas/bin/ktImportText",
                krona_args,
                "-o", output,
                sep = " "))
